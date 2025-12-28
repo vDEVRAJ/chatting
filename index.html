@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalkBit - 5 Column Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            overflow: hidden;
+        }
+
+        /* The 5-Column Grid */
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            height: calc(100vh - 80px); /* Leave space for AI bar */
+            gap: 2px;
+            background-color: #333;
+        }
+
+        .column {
+            background-color: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Label for each column */
+        .column-header {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* The AI Reply Bar at the bottom */
+        .ai-bar {
+            height: 80px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            color: white;
+            border-top: 2px solid #00d2ff;
+        }
+
+        .ai-suggestion {
+            flex-grow: 1;
+            background: #333;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 0 15px;
+            border: 1px dashed #00d2ff;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .send-btn {
+            background: #00d2ff;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="column">
+            <div class="column-header">WhatsApp</div>
+            <iframe src="https://web.whatsapp.com"></iframe>
+        </div>
+
+        <div class="column">
+            <div class="column-header">Instagram</div>
+            <iframe src="https://www.instagram.com/direct/inbox/"></iframe>
+        </div>
+
+        <div class="column">
+            <div class="column-header">Telegram</div>
+            <iframe src="https://web.telegram.org"></iframe>
+        </div>
+
+        <div class="column">
+            <div class="column-header">LinkedIn</div>
+            <iframe src="https://www.linkedin.com/messaging/"></iframe>
+        </div>
+
+        <div class="column">
+            <div class="column-header">Messenger / Discord</div>
+            <iframe src="https://www.messenger.com"></iframe>
+        </div>
+    </div>
+
+    <div class="ai-bar">
+        <strong>TalkBit AI:</strong>
+        <div class="ai-suggestion" id="suggestion">
+            Waiting for a message... AI will suggest a reply here.
+        </div>
+        <button class="send-btn">Send to Column</button>
+    </div>
+
+</body>
+</html>
