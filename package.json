@@ -1,0 +1,12 @@
+{
+  "name": "chatting-ai",
+  "version": "1.0.0",
+  "description": "5-Column AI Social Dashboard",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^30.0.0"
+  }
+}
